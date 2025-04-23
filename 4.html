@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skin Issue Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f7ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 6px;
+    }
+    select,
+    input[type="file"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    img.preview {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h3>Skin Issue Upload</h3>
+  <form id="skinForm">
+    <label for="location">Where is the issue?</label>
+    <select id="location" required>
+      <option value="">Select a body part</option>
+      <option value="face">Face</option>
+      <option value="arm">Arm</option>
+      <option value="leg">Leg</option>
+      <option value="chest">Chest</option>
+      <option value="back">Back</option>
+      <option value="scalp">Scalp</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="imageUpload">Upload Image</label>
+    <input type="file" id="imageUpload" accept="image/*" required>
+    <img id="imagePreview" class="preview" alt="Image Preview">
+    <a href="file:///C:/Users/prasana/5.html">next</a>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('skinForm');
+  const imageInput = document.getElementById('imageUpload');
+  const imagePreview = document.getElementById('imagePreview');
+
+  imageInput.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      imagePreview.src = URL.createObjectURL(file);
+      imagePreview.style.display = 'block';
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const location = document.getElementById('location').value;
+    const image = imageInput.files[0];
+
+    if (!location || !image) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    
+  });
+</script>
+
+</body>
+</html>

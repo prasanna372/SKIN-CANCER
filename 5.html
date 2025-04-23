@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family History</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef6fa;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  
+  <form onsubmit="return submitAllData()">
+    <label>Anyone in your family had this disease?</label><br>
+    <select id="familyHistory" required>
+      <option value="">-- Select --</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+      <option value="unsure">Not Sure</option>
+    </select><br><br>
+
+    <label>Have you noticed any changes?</label><br>
+    <textarea id="changes" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function submitAllData() {
+      const history = document.getElementById('familyHistory').value;
+      const changes = document.getElementById('changes').value;
+
+      localStorage.setItem('familyHistory', history);
+      localStorage.setItem('changes', changes);
+    }
+  </script>
+</body>
+</html>

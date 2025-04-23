@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Form</title>
+    <style>
+        /* Background image for the entire page */
+        body {
+            background-image: url('https://www.shutterstock.com/image-photo/pours-out-bottle-pills-into-260nw-2415869181.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            width: 200;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for the form container */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Health Form</h1>
+        <form action="#">
+            <!-- Name Input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Gender Selection -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Age Input -->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="gmail">Gmail:</label>
+            <input type="email" id="gmail" placeholder="Gmail" required><br>
+      <div class="error" id="errorMsg"></div>
+
+            <!-- Days of Disease Input -->
+            <label for="disease_days">from how many days  the is Disease:</label>
+            <input type="number" id="disease_days" name="disease_days" required>
+            <a href="file:///C:/Users/prasana/4.html">next</a>
+        </form>
+    </div>
+
+</body>
+</html>
